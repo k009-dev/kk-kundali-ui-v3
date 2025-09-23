@@ -6,7 +6,8 @@ export default function Home() {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      backgroundColor: 'white'
     }}>
       <KundaliMain />
     </div>
