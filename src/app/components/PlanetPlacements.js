@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(4);
+  const [planetCount, setPlanetCount] = useState(5);
 
   // Generate test planets based on count (consistent for SSR)
   const generateTestPlanets = (count, houseIndex) => {
@@ -66,13 +66,24 @@ export default function PlanetPlacements() {
         }
         // For all other houses, use 2x2 grid layout with more spacing
         return [
-          { top: '25%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '25%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
+          { top: '20%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '20%', left: '80%', transform: 'translate(-50%, -50%)' },
+          { top: '80%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '80%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 5:
+        // For houses 1 and 7 (vertical houses), place one below another
+        if (houseIndex === 0 || houseIndex === 6) { // House 1 and 7 (0-indexed)
+          return [
+            { top: '10%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '30%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '70%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '90%', left: '50%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For all other houses, use the original layout
         return [
           { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' },
           { top: '50%', left: '25%', transform: 'translate(-50%, -50%)' },

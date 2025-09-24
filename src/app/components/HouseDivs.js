@@ -11,11 +11,11 @@ export default function HouseDivs() {
       {/* House 1 */}
       <div style={{
         position: 'absolute',
-        top: '20%',
+        top: '19%',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: '8%',
-        height: '23%',
+        width: '9%',
+        height: '25%',
         border: '1px solid gold'
       }}>
       </div>
@@ -26,8 +26,8 @@ export default function HouseDivs() {
         top: '16%',
         right: '35%',
         transform: 'translate(50%, -50%)',
-        width: '16%',
-        height: '14%',
+        width: '17%',
+        height: '15%',
         border: '1px solid gold'
       }}>
       </div>
@@ -38,8 +38,8 @@ export default function HouseDivs() {
         top: '35%',
         right: '14%',
         transform: 'translate(50%, -50%)',
-        width: '12%',
-        height: '16%',
+        width: '13%',
+        height: '18%',
         border: '1px solid gold'
       }}>
       </div>
@@ -48,10 +48,10 @@ export default function HouseDivs() {
       <div style={{
         position: 'absolute',
         top: '50%',
-        right: '20%',
+        right: '19%',
         transform: 'translateY(-50%)',
-        width: '23%',
-        height: '8%',
+        width: '24%',
+        height: '9%',
         border: '1px solid gold'
       }}>
       </div>
@@ -62,8 +62,8 @@ export default function HouseDivs() {
         bottom: '35%',
         right: '14%',
         transform: 'translate(50%, 50%)',
-        width: '12%',
-        height: '16%',
+        width: '13%',
+        height: '18%',
         border: '1px solid gold'
       }}>
       </div>
@@ -74,8 +74,8 @@ export default function HouseDivs() {
         bottom: '16%',
         right: '35%',
         transform: 'translate(50%, 50%)',
-        width: '16%',
-        height: '14%',
+        width: '17%',
+        height: '15%',
         border: '1px solid gold'
       }}>
       </div>
@@ -83,11 +83,11 @@ export default function HouseDivs() {
       {/* House 7 */}
       <div style={{
         position: 'absolute',
-        bottom: '20%',
+        bottom: '19%',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: '8%',
-        height: '23%',
+        width: '9%',
+        height: '25%',
         border: '1px solid gold'
       }}>
       </div>
@@ -98,8 +98,8 @@ export default function HouseDivs() {
         bottom: '16%',
         left: '35%',
         transform: 'translate(-50%, 50%)',
-        width: '16%',
-        height: '14%',
+        width: '17%',
+        height: '15%',
         border: '1px solid gold'
       }}>
       </div>
@@ -110,8 +110,8 @@ export default function HouseDivs() {
         bottom: '35%',
         left: '14%',
         transform: 'translate(-50%, 50%)',
-        width: '12%',
-        height: '16%',
+        width: '13%',
+        height: '18%',
         border: '1px solid gold'
       }}>
       </div>
@@ -120,10 +120,10 @@ export default function HouseDivs() {
       <div style={{
         position: 'absolute',
         top: '50%',
-        left: '20%',
+        left: '19%',
         transform: 'translateY(-50%)',
-        width: '23%',
-        height: '8%',
+        width: '24%',
+        height: '9%',
         border: '1px solid gold'
       }}>
       </div>
@@ -134,8 +134,8 @@ export default function HouseDivs() {
         top: '35%',
         left: '14%',
         transform: 'translate(-50%, -50%)',
-        width: '12%',
-        height: '16%',
+        width: '13%',
+        height: '18%',
         border: '1px solid gold'
       }}>
       </div>
@@ -146,8 +146,8 @@ export default function HouseDivs() {
         top: '16%',
         left: '35%',
         transform: 'translate(-50%, -50%)',
-        width: '16%',
-        height: '14%',
+        width: '17%',
+        height: '15%',
         border: '1px solid gold'
       }}>
       </div>
