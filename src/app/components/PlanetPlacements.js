@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(3);
+  const [planetCount, setPlanetCount] = useState(4);
 
   // Generate test planets based on count (consistent for SSR)
   const generateTestPlanets = (count, houseIndex) => {
@@ -47,19 +47,29 @@ export default function PlanetPlacements() {
             { top: '80%', left: '50%', transform: 'translate(-50%, -50%)' }
           ];
         }
-        // For all other houses, use the original layout
+        // For all other houses (10, 4, 6, 8, 2, 12), use layout with more spacing
         return [
-          { top: '25%', left: '50%', transform: 'translate(-50%, -50%)' },
-          { top: '65%', left: '30%', transform: 'translate(-50%, -50%)' },
-          { top: '65%', left: '70%', transform: 'translate(-50%, -50%)' }
+          { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' },
+          { top: '70%', left: '25%', transform: 'translate(-50%, -50%)' },
+          { top: '70%', left: '75%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 4:
+        // For houses 1 and 7 (vertical houses), place one below another
+        if (houseIndex === 0 || houseIndex === 6) { // House 1 and 7 (0-indexed)
+          return [
+            { top: '15%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '40%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '65%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '85%', left: '50%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For all other houses, use 2x2 grid layout with more spacing
         return [
-          { top: '30%', left: '30%', transform: 'translate(-50%, -50%)' },
-          { top: '30%', left: '70%', transform: 'translate(-50%, -50%)' },
-          { top: '70%', left: '30%', transform: 'translate(-50%, -50%)' },
-          { top: '70%', left: '70%', transform: 'translate(-50%, -50%)' }
+          { top: '25%', left: '25%', transform: 'translate(-50%, -50%)' },
+          { top: '25%', left: '75%', transform: 'translate(-50%, -50%)' },
+          { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' },
+          { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 5:
