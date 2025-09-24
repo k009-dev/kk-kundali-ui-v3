@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(3);
+  const [planetCount, setPlanetCount] = useState(6);
 
   // Generate test planets based on count (consistent for SSR)
   const generateTestPlanets = (count, houseIndex) => {
@@ -49,9 +49,9 @@ export default function PlanetPlacements() {
         }
         // For all other houses (10, 4, 6, 8, 2, 12), use layout with more spacing
         return [
-          { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' },
-          { top: '70%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '70%', left: '75%', transform: 'translate(-50%, -50%)' }
+          { top: '15%', left: '50%', transform: 'translate(-50%, -50%)' },
+          { top: '75%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '75%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 4:
@@ -95,11 +95,11 @@ export default function PlanetPlacements() {
         }
         // For all other houses, use layout with more spacing
         return [
-          { top: '15%', left: '50%', transform: 'translate(-50%, -50%)' },
-          { top: '45%', left: '20%', transform: 'translate(-50%, -50%)' },
-          { top: '45%', left: '80%', transform: 'translate(-50%, -50%)' },
-          { top: '80%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '80%', left: '75%', transform: 'translate(-50%, -50%)' }
+          { top: '10%', left: '50%', transform: 'translate(-50%, -50%)' },
+          { top: '40%', left: '15%', transform: 'translate(-50%, -50%)' },
+          { top: '40%', left: '85%', transform: 'translate(-50%, -50%)' },
+          { top: '85%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '85%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 6:
@@ -135,28 +135,6 @@ export default function PlanetPlacements() {
           { top: '80%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
-      case 7:
-        return [
-          { top: '15%', left: '50%', transform: 'translate(-50%, -50%)' },
-          { top: '35%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '35%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '55%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '55%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '30%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '70%', transform: 'translate(-50%, -50%)' }
-        ];
-      
-      case 8:
-        return [
-          { top: '15%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '15%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '35%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '35%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '65%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '65%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '85%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '85%', left: '75%', transform: 'translate(-50%, -50%)' }
-        ];
       
       default:
         return [{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }];
