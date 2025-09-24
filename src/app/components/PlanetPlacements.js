@@ -2,34 +2,52 @@
 import { useState } from 'react';
 
 export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(1);
+  const [planetCount, setPlanetCount] = useState(3);
 
-  // Generate test planets based on count
-  const generateTestPlanets = (count) => {
+  // Generate test planets based on count (consistent for SSR)
+  const generateTestPlanets = (count, houseIndex) => {
     const planets = ['Me', 'Ve', 'Ma', 'Ju', 'Sa', 'Ra', 'Ke', 'Su'];
     const testPlanets = [];
     for (let i = 0; i < count; i++) {
       testPlanets.push({
         code: planets[i % planets.length],
-        degree: String(Math.floor(Math.random() * 30)).padStart(2, '0')
+        degree: String((houseIndex * 3 + i * 5) % 30).padStart(2, '0')
       });
     }
     return testPlanets;
   };
 
   // Get position for planets in a house
-  const getPlanetPositions = (count) => {
+  const getPlanetPositions = (count, houseIndex) => {
     switch (count) {
       case 1:
         return [{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }];
       
       case 2:
+        // For houses 4 and 10 (horizontal houses), place side by side
+        if (houseIndex === 3 || houseIndex === 9) { // House 4 and 10 (0-indexed)
+          return [
+            { top: '50%', left: '30%', transform: 'translate(-50%, -50%)' },
+            { top: '50%', left: '70%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For all other houses, place vertically
         return [
           { top: '30%', left: '50%', transform: 'translate(-50%, -50%)' },
           { top: '70%', left: '50%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 3:
+        // For houses 1, 7, 11, 3, 9, 5 place one below another
+        if (houseIndex === 0 || houseIndex === 6 || houseIndex === 10 || houseIndex === 2 || houseIndex === 8 || houseIndex === 4) { 
+          // House 1, 7, 11, 3, 9, 5 (0-indexed)
+          return [
+            { top: '20%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '80%', left: '50%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For all other houses, use the original layout
         return [
           { top: '25%', left: '50%', transform: 'translate(-50%, -50%)' },
           { top: '65%', left: '30%', transform: 'translate(-50%, -50%)' },
@@ -119,7 +137,7 @@ export default function PlanetPlacements() {
     { top: '16%', left: '35%', width: '16%', height: '14%', transform: 'translate(-50%, -50%)' }
   ];
 
-  const planetPositions = getPlanetPositions(planetCount);
+  // This will be moved inside the map function
 
   return (
     <>
@@ -158,7 +176,8 @@ export default function PlanetPlacements() {
         zIndex: 20
       }}>
         {housePositions.map((house, houseIndex) => {
-          const testPlanets = generateTestPlanets(planetCount);
+          const testPlanets = generateTestPlanets(planetCount, houseIndex);
+          const planetPositions = getPlanetPositions(planetCount, houseIndex);
           
           return (
             <div key={houseIndex} style={{
