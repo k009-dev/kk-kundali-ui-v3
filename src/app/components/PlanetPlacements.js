@@ -1,8 +1,4 @@
-'use client';
-import { useState } from 'react';
-
-export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(6);
+export default function PlanetPlacements({ planetCount = 6 }) {
 
   // Generate test planets based on count (consistent for SSR)
   const generateTestPlanets = (count, houseIndex) => {
@@ -176,32 +172,6 @@ export default function PlanetPlacements() {
 
   return (
     <>
-      {/* Control Panel */}
-      <div style={{
-        position: 'fixed',
-        top: '20px',
-        left: '20px',
-        zIndex: 100,
-        backgroundColor: 'white',
-        padding: '10px',
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        color: 'black'
-      }}>
-        <label style={{ color: 'black' }}>
-          Number of planets in each house: 
-          <select 
-            value={planetCount} 
-            onChange={(e) => setPlanetCount(Number(e.target.value))}
-            style={{ marginLeft: '10px', color: 'black' }}
-          >
-            {[1,2,3,4,5,6,7,8,9,10,11,12].map(num => (
-              <option key={num} value={num}>{num}</option>
-            ))}
-          </select>
-        </label>
-      </div>
-
       {/* Planet Placements */}
       <div style={{
         position: 'absolute',
