@@ -1,5 +1,6 @@
 import HouseNumbers from './HouseNumbers';
 import HouseDivs from './HouseDivs';
+import PlanetPlacements from './PlanetPlacements';
 
 export default function KundaliMain() {
   return (
@@ -16,6 +17,7 @@ export default function KundaliMain() {
     >
       <HouseDivs />
       <HouseNumbers />
+      <PlanetPlacements />
     </div>
   );
 }
