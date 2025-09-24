@@ -78,9 +78,11 @@ export default function KundaliMain() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '100vh',
-        padding: '80px 20px 20px', // Top padding for control panel
-        boxSizing: 'border-box'
+        width: '100vw',
+        height: `${600 * scale + 80}px`, // Dynamic height based on scaled chart + control panel space
+        paddingTop: '80px', // Only top padding for control panel
+        boxSizing: 'border-box',
+        overflow: 'hidden'
       }}>
         <div
           style={{
