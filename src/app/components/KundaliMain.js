@@ -1,4 +1,5 @@
 import HouseNumbers from './HouseNumbers';
+import HouseDivs from './HouseDivs';
 
 export default function KundaliMain() {
   return (
@@ -13,6 +14,7 @@ export default function KundaliMain() {
         position: 'relative'
       }}
     >
+      <HouseDivs />
       <HouseNumbers />
     </div>
   );
