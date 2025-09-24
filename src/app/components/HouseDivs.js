@@ -16,7 +16,7 @@ export default function HouseDivs() {
         transform: 'translateX(-50%)',
         width: '9%',
         height: '25%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -28,7 +28,7 @@ export default function HouseDivs() {
         transform: 'translate(50%, -50%)',
         width: '17%',
         height: '15%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -40,7 +40,7 @@ export default function HouseDivs() {
         transform: 'translate(50%, -50%)',
         width: '13%',
         height: '18%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -52,7 +52,7 @@ export default function HouseDivs() {
         transform: 'translateY(-50%)',
         width: '24%',
         height: '9%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -64,7 +64,7 @@ export default function HouseDivs() {
         transform: 'translate(50%, 50%)',
         width: '13%',
         height: '18%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -76,7 +76,7 @@ export default function HouseDivs() {
         transform: 'translate(50%, 50%)',
         width: '17%',
         height: '15%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -88,7 +88,7 @@ export default function HouseDivs() {
         transform: 'translateX(-50%)',
         width: '9%',
         height: '25%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -100,7 +100,7 @@ export default function HouseDivs() {
         transform: 'translate(-50%, 50%)',
         width: '17%',
         height: '15%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -112,7 +112,7 @@ export default function HouseDivs() {
         transform: 'translate(-50%, 50%)',
         width: '13%',
         height: '18%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -124,7 +124,7 @@ export default function HouseDivs() {
         transform: 'translateY(-50%)',
         width: '24%',
         height: '9%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -136,7 +136,7 @@ export default function HouseDivs() {
         transform: 'translate(-50%, -50%)',
         width: '13%',
         height: '18%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
       
@@ -148,7 +148,7 @@ export default function HouseDivs() {
         transform: 'translate(-50%, -50%)',
         width: '17%',
         height: '15%',
-        border: '1px solid gold'
+        // border: '1px solid gold'
       }}>
       </div>
     </div>

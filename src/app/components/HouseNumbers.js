@@ -37,8 +37,8 @@ export default function HouseNumbers() {
       {/* 3 */}
       <div style={{
         position: 'absolute',
-        top: '38%',
-        left: '78%',
+        top: '30%',
+        left: '74%',
         transform: 'translateX(-50%)',
         color: 'gold',
         fontSize: '14px',
@@ -63,8 +63,8 @@ export default function HouseNumbers() {
       {/* 5 */}
       <div style={{
         position: 'absolute',
-        top: '58%',
-        left: '78%',
+        top: '67%',
+        left: '74%',
         transform: 'translateX(-50%)',
         color: 'gold',
         fontSize: '14px',
@@ -115,8 +115,8 @@ export default function HouseNumbers() {
       {/* 9 */}
       <div style={{
         position: 'absolute',
-        top: '58%',
-        left: '22%',
+        top: '67%',
+        left: '26%',
         transform: 'translateX(-50%)',
         color: 'gold',
         fontSize: '14px',
@@ -141,8 +141,8 @@ export default function HouseNumbers() {
       {/* 11 */}
       <div style={{
         position: 'absolute',
-        top: '38%',
-        left: '22%',
+        top: '30%',
+        left: '25%',
         transform: 'translateX(-50%)',
         color: 'gold',
         fontSize: '14px',
