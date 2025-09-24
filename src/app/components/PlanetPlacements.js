@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 export default function PlanetPlacements() {
-  const [planetCount, setPlanetCount] = useState(6);
+  const [planetCount, setPlanetCount] = useState(3);
 
   // Generate test planets based on count (consistent for SSR)
   const generateTestPlanets = (count, houseIndex) => {
@@ -103,13 +103,36 @@ export default function PlanetPlacements() {
         ];
       
       case 6:
+        // For houses 1 and 7 (vertical houses), place one below another
+        if (houseIndex === 0 || houseIndex === 6) { // House 1 and 7 (0-indexed)
+          return [
+            { top: '8%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '25%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '42%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '58%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '75%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '92%', left: '50%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For houses 4 and 10 (horizontal houses), place 3 in each row
+        if (houseIndex === 3 || houseIndex === 9) { // House 4 and 10 (0-indexed)
+          return [
+            { top: '25%', left: '10%', transform: 'translate(-50%, -50%)' },
+            { top: '25%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '25%', left: '90%', transform: 'translate(-50%, -50%)' },
+            { top: '75%', left: '10%', transform: 'translate(-50%, -50%)' },
+            { top: '75%', left: '50%', transform: 'translate(-50%, -50%)' },
+            { top: '75%', left: '90%', transform: 'translate(-50%, -50%)' }
+          ];
+        }
+        // For all other houses, use 3x2 grid layout with more spacing
         return [
-          { top: '25%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '25%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '50%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '50%', left: '75%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '25%', transform: 'translate(-50%, -50%)' },
-          { top: '75%', left: '75%', transform: 'translate(-50%, -50%)' }
+          { top: '20%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '20%', left: '80%', transform: 'translate(-50%, -50%)' },
+          { top: '50%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '50%', left: '80%', transform: 'translate(-50%, -50%)' },
+          { top: '80%', left: '20%', transform: 'translate(-50%, -50%)' },
+          { top: '80%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
       case 7:
