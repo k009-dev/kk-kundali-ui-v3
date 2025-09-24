@@ -135,9 +135,12 @@ export default function PlanetPlacements() {
           { top: '80%', left: '80%', transform: 'translate(-50%, -50%)' }
         ];
       
-      
+      case 7:
+      case 8:
       default:
-        return [{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }];
+        // For 7+ planets, use the 6-planet layout but show only 5 planets + "+X"
+        // Get the 6-planet positions by calling case 6 logic
+        return getPlanetPositions(6, houseIndex);
     }
   };
 
@@ -182,16 +185,17 @@ export default function PlanetPlacements() {
         backgroundColor: 'white',
         padding: '10px',
         border: '1px solid #ccc',
-        borderRadius: '5px'
+        borderRadius: '5px',
+        color: 'black'
       }}>
-        <label>
+        <label style={{ color: 'black' }}>
           Number of planets in each house: 
           <select 
             value={planetCount} 
             onChange={(e) => setPlanetCount(Number(e.target.value))}
-            style={{ marginLeft: '10px' }}
+            style={{ marginLeft: '10px', color: 'black' }}
           >
-            {[1,2,3,4,5,6,7,8].map(num => (
+            {[1,2,3,4,5,6,7,8,9,10,11,12].map(num => (
               <option key={num} value={num}>{num}</option>
             ))}
           </select>
@@ -219,6 +223,37 @@ export default function PlanetPlacements() {
             }}>
               {testPlanets.map((planet, planetIndex) => {
                 const position = planetPositions[planetIndex] || planetPositions[0];
+                
+                // For 7+ planets, show only first 5 planets + "+X" in 6th position
+                if (planetCount >= 7) {
+                  if (planetIndex >= 5) {
+                    // Show "+X" indicator only for the 6th position (index 5)
+                    if (planetIndex === 5) {
+                      const extraCount = planetCount - 5;
+                      return (
+                        <div
+                          key={planetIndex}
+                          style={{
+                            position: 'absolute',
+                            ...position,
+                            fontWeight: 'bold',
+                            whiteSpace: 'nowrap'
+                          }}
+                        >
+                          <span style={{ 
+                            color: '#B8860B', 
+                            fontSize: '12px' 
+                          }}>
+                            +{extraCount}
+                          </span>
+                        </div>
+                      );
+                    }
+                    return null; // Don't render planets beyond 6th position
+                  }
+                }
+                
+                // Regular planet rendering
                 return (
                   <div
                     key={planetIndex}
