@@ -180,7 +180,7 @@ export default function PlanetPlacements() {
                   >
                     <span style={{ 
                       color: 'gold', 
-                      fontSize: '14px' 
+                      fontSize: '15px' 
                     }}>
                       {planet.code}
                     </span>
