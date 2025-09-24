@@ -55,6 +55,18 @@ export default function HouseDivs() {
         border: '1px solid gold'
       }}>
       </div>
+      
+      {/* House 2 */}
+      <div style={{
+        position: 'absolute',
+        top: '16%',
+        right: '35%',
+        transform: 'translate(50%, -50%)',
+        width: '16%',
+        height: '14%',
+        border: '1px solid gold'
+      }}>
+      </div>
     </div>
   );
 }
